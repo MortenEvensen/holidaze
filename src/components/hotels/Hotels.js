@@ -1,9 +1,12 @@
 import React from 'react';
-import Heading from "../layout/Headings";
+import HotelData from "./HotelData"
+
 
 export function Hotels() {
     return (
-        <Heading title="Hotels" />
+        <>
+        	<HotelData />
+        </>
     );
 }
 

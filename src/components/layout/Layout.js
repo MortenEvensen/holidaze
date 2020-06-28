@@ -12,6 +12,7 @@ import Home from "../home/Home";
 import Hotels from "../hotels/Hotels";
 import Enquiries from "../enquiries/Enquiries";
 import Contact from "../contact/Contact";
+import HotelDetail from "../hotels/HotelDetail"
 
 function Layout() {
     
@@ -42,6 +43,7 @@ return (
         		<Route path="/hotels" exact component={Hotels} />
         		<Route path="/enquiries" exact component={Enquiries} />
         		<Route path="/contact" exact component={Contact} />
+                <Route path="/hotel/:id" component={HotelDetail} />
         	</Switch>
         </Container>
     </Router>
