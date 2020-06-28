@@ -1,0 +1,13 @@
+@import "../variables/variables";
+
+
+.h1 {
+	font-size: 80px;
+}
+
+@media screen and (max-width: $phone-width) {
+	
+	.h1 {
+		font-size: 50px;
+	}
+}
