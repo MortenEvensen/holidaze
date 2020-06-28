@@ -1,11 +1,11 @@
 import React from 'react';
 import './sass/App.scss';
-import Navbar from "./components/navbar"
+import Layout from "./components/layout/Layout"
 
 function App() {
   return (
     <div className="App">
-    	<Navbar />
+    	<Layout />
     </div>
   );
 }
