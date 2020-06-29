@@ -6,6 +6,7 @@ export function Hotels() {
     return (
         <>
         	<HotelData />
+        	
         </>
     );
 }

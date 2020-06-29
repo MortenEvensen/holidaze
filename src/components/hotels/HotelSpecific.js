@@ -7,15 +7,13 @@ function HotelSpecific({ id, name, image, description, price }) {
 		<Link to={"hotel/" + id}>
 			<div className="hotel-wrap">
         		<div className="image-wrap">
-        			<img src={image}/>
+        			<img alt={name} src={image}/>
         		</div>
         		<div className="text-wrap">
         			<h2>{name}</h2>
         			<p>{description}</p>
         			<p>Price: {price}$</p>
-        			<Link to={"hotel/" + id}>
-        				<button>Knapp!</button>
-        			</Link>
+        			
         		</div>
         	</div>
         </Link>

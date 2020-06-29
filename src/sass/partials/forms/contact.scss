@@ -1,0 +1,56 @@
+@import "../colors/colors";
+
+.contact-header {
+	font-size: 30px;
+	text-align: center;
+}
+
+.form-wrap {
+	padding: 30px;
+	margin: 30px 0 0 0;
+	display: flex;
+	border: 3px solid $border-blue;
+	border-radius: 20px;
+	background-color: $background-blue;
+
+	.input-wrap {
+		flex: 1;
+		margin: 30px;
+		input {
+			margin: 10px 0 10px 0;
+		}
+	}
+	.message-wrap {
+		flex: 1;
+		margin: 30px;
+		textarea {
+			margin: 10px 0 10px 0;
+			padding: 50px;
+		}
+	}
+}
+
+label {
+	font-size: 20px;
+	margin: 0 15px 0 0;
+
+}
+
+.button {
+	background-color: $button-green;
+	padding: 10px 50px;
+	border-radius: 20px;
+	border: 2px solid black;
+	box-shadow: 2px 2px 2px black;
+	&:hover {
+		box-shadow: 1px 1px 1px black;
+	}
+	&:active {
+		box-shadow: 0px 0px 0px black;
+
+	}
+}
+
+.error {
+	color: red;
+}
