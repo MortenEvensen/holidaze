@@ -1,5 +1,5 @@
 import React from 'react';
-import HotelData from "./HotelData"
+import HotelData from "./HotelData";
 
 
 export function Hotels() {
