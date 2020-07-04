@@ -2,8 +2,21 @@ import React from 'react';
 import Heading from "../layout/Headings";
 
 export function Home() {
+
+
+
     return (
-        <Heading title="Home" />
+    	<>
+    	<div className="bg-wrap">
+    		<div className="background-image">	
+
+    		<Heading title="HomePage" />
+    		</div>
+    	</div>
+        	
+	
+		
+        </>
     );
 }
 
