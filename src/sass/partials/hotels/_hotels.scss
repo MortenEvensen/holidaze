@@ -2,7 +2,9 @@
 @import "../variables/variables";
 
 .hotel-wrap {
-	margin: 20px 0 0 0;
+
+	margin: 30px 100px;
+	
 	display: flex;
 	padding: 20px;
 	border: 3px solid $border-blue;
@@ -55,5 +57,135 @@ a {
 		text-decoration: none;
 		color: inherit;
 	}
+}
+
+
+
+/* Hotel details
+--------------------*/
+
+.hotel-details-wrap {
+	margin: 20px 40px;
+	
+	padding: 20px;
+	border: 3px solid $border-blue;
+	border-radius: 20px;
+	background-color: $background-blue;
+	.image-details-wrap {
+		
+
+		.image {
+			min-height: 200px;
+			max-height: 300px;
+			width: 400px;
+			border-radius: 20px;
+		}	
+	} 
+
+	.text-wrap {		
+
+		h2 {
+			font-size: 30px;
+			margin: 0 0 20px 0;
+		}
+
+		p {
+			margin: 0 0 10px 0;
+		}
+	}
+
+}
+
+a {
+	color: inherit;
+	&:hover {
+		text-decoration: none;
+		color: inherit;
+	}
+}
+
+.search {
+	padding: 0 40px;
+}
+
+@media screen and (max-width: $phone-width) {
+
+	.hotel-wrap {
+	margin: 20px 10px;
+	display: flex;
+	flex-direction: column;
+	padding: 20px 0 ;
+	box-shadow: 1px 1px 1px black;
+
+
+	.image-wrap {
+		text-align: center;
+
+		img {
+
+			min-height: 200px;
+			max-height: 400px;
+			min-width: 300px;
+			border-radius: 20px;
+		}	
+	} 
+
+	.text-wrap {
+		padding: 15px;
+
+		h2 {
+			font-size: 30px;
+			margin: 0 0 20px 0;
+		}
+
+		p {
+			margin: 0 0 10px 0;
+		}
+	}
+
+}
+.search {
+	text-align: center;
+}
+}
+
+/* Hotel details
+--------------------*/
+
+.hotel-details-wrap {
+	margin: 20px 0px;
+	
+	padding: 20px;
+	border: 3px solid $border-blue;
+	border-radius: 20px;
+	background-color: $background-blue;
+
+	
+
+
+	.image-details-wrap {
+		
+
+		.image {
+			min-height: 200px;
+			max-height: 500px;
+			width: 100%;
+			border-radius: 20px;
+		}	
+	} 
+
+	.text-wrap {
+		
+
+		h2 {
+			font-size: 30px;
+			margin: 0 0 20px 0;
+		}
+
+		p {
+			margin: 0 0 10px 0;
+		}
+	}
+
 }
 

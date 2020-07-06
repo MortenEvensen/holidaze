@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function HotelSpecific({ id, name, image, description, price }) {
+function HotelSpecific({ id, name, image, description, price, guest }) {
 	return (
 		<>
 		<Link to={"hotel/" + id}>
@@ -13,6 +13,7 @@ function HotelSpecific({ id, name, image, description, price }) {
         			<h2>{name}</h2>
         			<p>{description}</p>
         			<p>Price: {price}$</p>
+                                <p>Maximum guests: {guest}</p>
         			
         		</div>
         	</div>
