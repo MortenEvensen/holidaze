@@ -13,7 +13,8 @@ function HotelSpecific({ id, name, image, description, price, guest }) {
         			<h2>{name}</h2>
         			<p>{description}</p>
         			<p>Price: {price}$</p>
-                                <p>Maximum guests: {guest}</p>
+                                
+                                
         			
         		</div>
         	</div>

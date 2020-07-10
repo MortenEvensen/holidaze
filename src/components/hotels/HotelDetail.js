@@ -1,7 +1,8 @@
 import React, { Component, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { BASE_URL } from "../../constants/api";
-import SimpleMap from "./../maps/Map";
+import Maps from "./../maps/Map";
+
 
 
 function HotelDetail(props) {
