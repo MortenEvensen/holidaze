@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
+import ReactDatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 export function Enquiry() {
 
     const form = useRef(null)
-	const { register, handleSubmit, errors } = useForm();
+	const { register, handleSubmit, errors, control } = useForm();
   	function onSubmit(){ 
 
     const data = new FormData(form.current)     
@@ -39,23 +41,42 @@ export function Enquiry() {
                         <label htmlFor="clientName">Name</label>
                             < br/ >
      				    <input name="clientName" ref={register({ required: true })} /> {/* register an input */}
-     				    {errors.name && <p className="error">Name is required.</p>}
+     				    {errors.clientName && <p className="error">Name is required.</p>}
      			            < br/ >	
      			        <label htmlFor="email">Email</label>
      			            < br/ >
      				    <input name="email" ref={register({ required: true })} />
      				    {errors.email && <p className="error">Email is required.</p>}	
-                            < br/ >	   		    		       	
-        	            <label htmlFor="checkin">Check in</label>
-                            < br/ >
-                        <input name="checkin" ref={register({ required: true })} />
-                        {errors.email && <p className="error">Check in date is required.</p>} 
-                            < br/ >  
-     		             <label htmlFor="checkout">Check out</label>
-                            < br/ >
-                        <input name="checkout" ref={register({ required: true })} />
-                        {errors.email && <p className="error">Check out date is required.</p>}  	
-     		                 < br/>
+                            < br/ >                                                
+                     <section>
+                        <label htmlFor="checkin">Checkin date: </label>
+                            < br/>
+                        <Controller
+                          as={ReactDatePicker}
+                          control={control}
+                          valueName="selected" // DateSelect value's name is selected
+                          onChange={([selected]) => selected}
+                          name="checkin"
+                          className="input"
+                          placeholderText="Select date"
+                        />
+                        {errors.checkin && <p className="error">Check in date is required.</p>} 
+                    </section>
+                    <section>
+                         <label htmlFor="checkout">Checkout date: </label>
+                            < br/>
+                        <Controller
+                          as={ReactDatePicker}
+                          control={control}
+                          valueName="selected" // DateSelect value's name is selected
+                          onChange={([selected]) => selected}
+                          name="checkout"
+                          className="input"
+                          placeholderText="Select date"
+                        />
+                        {errors.checkout && <p className="error">Check in date is required.</p>} 
+                    </section>
+
         		        <input className="button" name="submit" type="submit" />
                     </div>
     		    </form>
