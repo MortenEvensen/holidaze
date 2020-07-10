@@ -11,8 +11,7 @@ export function Enquiry() {
 
     const data = new FormData(form.current)     
     fetch("http://localhost/hotel-api/enquiry-success.php", {
-        method: "POST",
-    
+        method: "POST",    
         body: data
     })
     .then(function(response) {
@@ -49,7 +48,7 @@ export function Enquiry() {
      				    {errors.email && <p className="error">Email is required.</p>}	
                             < br/ >                                                
                      <section>
-                        <label htmlFor="checkin">Checkin date: </label>
+                        <label htmlFor="checkin">Check-in date: </label>
                             < br/>
                         <Controller
                           as={ReactDatePicker}
@@ -63,7 +62,7 @@ export function Enquiry() {
                         {errors.checkin && <p className="error">Check in date is required.</p>} 
                     </section>
                     <section>
-                         <label htmlFor="checkout">Checkout date: </label>
+                         <label htmlFor="checkout">Check-out date: </label>
                             < br/>
                         <Controller
                           as={ReactDatePicker}
@@ -76,7 +75,19 @@ export function Enquiry() {
                         />
                         {errors.checkout && <p className="error">Check in date is required.</p>} 
                     </section>
-
+                      <label htmlFor="adults">Number of adults: </label>  
+                        <br/> 
+                    <input name="adults" type="number"min="0" max="20" />
+                        <br/> 
+                     <label htmlFor="children">Number of children: </label>  
+                        <br/> 
+                    <input name="children" type="number" min="0" max="20" />
+                        <br/> 
+                        <label htmlFor="notes">Notes: </label>
+                                    < br/ >
+                                <textarea name="notes" />
+                               
+                                <br/>
         		        <input className="button" name="submit" type="submit" />
                     </div>
     		    </form>
