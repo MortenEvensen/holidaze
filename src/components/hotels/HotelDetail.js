@@ -1,7 +1,6 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { BASE_URL } from "../../constants/api";
-import Maps from "./../maps/Map";
 
 
 
@@ -18,24 +17,24 @@ function HotelDetail(props) {
 
 
 
-    console.log("lat: " + detail.googleLat + ", lng: " + detail.googleLong )
+   
 
     return (
 
     	<>
 
-    		<div className="hotel-details-wrap">
+    		<div className="hotel-details-wrap bold">
         		
         		<div className="text-wrap">
         			<h2>{detail.establishmentName}</h2>
                 <div className="image-details-wrap">
-                    <img className="image" src={detail.imageUrl}/>
+                    <img className="image" alt={detail.establishmentName} src={detail.imageUrl}/>
                 </div>
-        			<p>Description: {detail.description}</p>
-        			<p>Price: {detail.price}$</p>
-                    <p>Maximum guests: {detail.maxGuests}</p>
-                    <p>Contact email: {detail.establishmentEmail}</p>
-                    <p>Selfcatering: {detail.selfCatering}</p>
+        			<p><span className="bold">Description: </span>{detail.description}</p>
+        			<p><span className="bold">Price: </span>{detail.price}$</p>
+                    <p><span className="bold">Maximum guests: </span>{detail.maxGuests}</p>
+                    <p><span className="bold">Contact email: </span>{detail.establishmentEmail}</p>
+                    <p><span className="bold">Self catering: </span>{detail.selfCatering}</p>
         		</div>
 
         	</div>

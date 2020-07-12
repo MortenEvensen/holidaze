@@ -10,9 +10,9 @@ function HotelSpecific({ id, name, image, description, price, guest }) {
         			<img alt={name} src={image}/>
         		</div>
         		<div className="text-wrap">
-        			<h2>{name}</h2>
+        			<h2 className="bold">{name}</h2>
         			<p>{description}</p>
-        			<p>Price: {price}$</p>
+        			<p><span className="bold">Price: </span>{price}$</p>
                                 
                                 
         			

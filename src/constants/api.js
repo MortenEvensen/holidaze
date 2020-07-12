@@ -1,1 +1,1 @@
-export const BASE_URL = "https://raw.githubusercontent.com/Noroff-Education/project-exam-2/master/establishments.json";
+export const BASE_URL = "http://localhost/hotel-api/get-establishments.php";

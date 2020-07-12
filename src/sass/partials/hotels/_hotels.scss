@@ -32,6 +32,7 @@
 			min-height: 200px;
 			max-height: 300px;
 			width: 400px;
+			max-width: 1000px;
 			border-radius: 20px;
 		}	
 	} 
@@ -153,7 +154,7 @@ a {
 --------------------*/
 
 .hotel-details-wrap {
-	margin: 20px 0px;
+	
 	
 	padding: 20px;
 	border: 3px solid $border-blue;
@@ -170,6 +171,7 @@ a {
 			min-height: 200px;
 			max-height: 500px;
 			width: 100%;
+			max-width: 1000px;
 			border-radius: 20px;
 		}	
 	} 

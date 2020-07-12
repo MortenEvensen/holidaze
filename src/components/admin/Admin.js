@@ -8,6 +8,8 @@ import {
 } from "react-router-dom";
 import Contact from "./Contact";
 import Enquires from "./Enquires";
+import Login from "./Login";
+import CreateEstablishment from "./CreateEstablishment";
 
 
 function Admin() {
@@ -15,11 +17,17 @@ function Admin() {
 	return (
 		<Router>
 			
-            <NavLink to="/contact" className="nav-link">
+            <NavLink to="/contact" className="nav-link-2">
                 Contact-messages
             </NavLink>
-            <NavLink to="/enquires" className="nav-link">
-                Enquires
+            <NavLink to="/enquires" className="nav-link-2">
+                Enquiries
+            </NavLink>
+            <NavLink to="/login" className="nav-link-2">
+                Login
+            </NavLink>
+            <NavLink to="/createEstablishment" className="nav-link-2">
+                Create Establishment
             </NavLink>
 
 
@@ -27,6 +35,9 @@ function Admin() {
      
         <Route path="/contact" exact component={Contact} />
         <Route path="/enquires" exact component={Enquires} />
+        <Route path="/login" exact component={Login} />
+        <Route path="/createEstablishment" exact component={CreateEstablishment} />
+    
     </Switch>
 
    		</Router>

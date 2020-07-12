@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
@@ -27,9 +27,9 @@ export function Enquiry() {
   };
 
     return (
-        <>
+        <><h2 className="contact-header">Enquiries</h2>
             <div className="form-wrap">
-        	   <h2 className="contact-header">Enquery</h2>
+        	   
         	   <form ref={form} onSubmit={handleSubmit(onSubmit)}>
         	        <div className="input-wrap">
         		        <label htmlFor="establishment">Establishment</label>

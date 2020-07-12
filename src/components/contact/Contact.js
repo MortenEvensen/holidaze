@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { useForm } from 'react-hook-form';
 
 export function Contact() {
@@ -26,9 +26,10 @@ export function Contact() {
   };
  
 	return (
-	<>	
+	<>	    
+        <h2 className="contact-header">Contact</h2>
 			<div className="form-wrap">
-            			<h2 className="contact-header">Contact</h2>
+            			
             			<form ref={form} onSubmit={handleSubmit(onSubmit)}>
             				<div className="input-wrap">
             					<label htmlFor="clientName">Name</label>
