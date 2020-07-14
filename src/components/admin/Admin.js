@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import Contact from "./Contact";
 import Enquires from "./Enquires";
-import CreateEstablishment from "./CreateEstablishment";
+import Establishments from "./Establishments";
 
 
 function Admin() {
@@ -20,13 +20,13 @@ function Admin() {
             <NavLink to="/enquires" className="nav-link-2">
                 Enquiries
             </NavLink>
-            <NavLink to="/createEstablishment" className="nav-link-2">
+            <NavLink to="/establishments" className="nav-link-2">
                 Create Establishment
             </NavLink>
         	<Switch>    
                 <Route path="/contact" exact component={Contact} />
                 <Route path="/enquires" exact component={Enquires} />
-                <Route path="/createEstablishment" exact component={CreateEstablishment} />   
+                <Route path="/establishments" exact component={Establishments} />   
             </Switch>
 
    		</Router>

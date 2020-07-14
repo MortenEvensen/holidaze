@@ -26,7 +26,7 @@ function CreateEstablishment() {
   };
  
 	return (
-	<>		<h2 className="contact-header">Add new establishment: </h2>
+	<>		
 			<div className="form-wrap">
             			
             			<form ref={form} onSubmit={handleSubmit(onSubmit)}>
