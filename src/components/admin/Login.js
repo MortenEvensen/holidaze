@@ -1,39 +1,46 @@
 import React, {useState} from 'react';
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+} from "react-router-dom";
+import Admin from "../admin/Admin";
 
 
-function Login(props) {
-const [state , setState] = useState({
-        email : "",
-        password : ""
+class Login extends React.Component {
+
+    state = {
+        password:""
+    };
+
+  handleChange = (e) =>{
+    this.setState({
+        password:e.target.value
     })
-    const handleChange = (e) => {
-        const {id , value} = e.target   
-        setState(prevState => ({
-            ...prevState,
-            [id] : value
-        }))
-    }
-    return(
-      <div className="card col-12 col-lg-4 login-card mt-2 hv-center">
-    
-      <input type="email" 
-                       className="form-control" 
-                       id="email" 
-                       aria-describedby="emailHelp" 
-                       placeholder="Enter email" 
-                       value={state.email}
-                       onChange={handleChange}
-                />
-     
-      <input type="password" 
-                        className="form-control" 
-                        id="password" 
-                        placeholder="Password"
-                        value={state.password}
-                        onChange={handleChange} 
-                    />
-     </div>
-    )
+  }
+
+  render() {
+    return (
+      <form onSubmit={this.handleSubmit}>
+        <label>
+          Password: (The password is "password"): 
+          <input value={this.state.password} onChange={this.handleChange} />
+        </label>
+        < br />
+        <Router>
+
+             <Link to="/admin">
+                 <button disabled={this.state.password !== "password"}>Submit</button>
+            </Link>
+            < br />
+            <Switch>
+                <Route path="/admin" exact component={Admin} />
+            </Switch>
+        </Router>
+      </form>
+    );
+  }
 }
 
 export default Login;

@@ -13,7 +13,8 @@ import Hotels from "../hotels/Hotels";
 import Enquiries from "../enquiries/Enquiries";
 import Contact from "../contact/Contact";
 import HotelDetail from "../hotels/HotelDetail";
-import Admin from "../admin/Admin";
+//import Admin from "../admin/Admin";
+import Login from "../admin/Login";
 
 function Layout() {
     
@@ -35,7 +36,7 @@ return (
                     <NavLink to="/contact" className="nav-link">
                     	Contact
                     </NavLink>
-                    <NavLink to="/admin" className="nav-link">
+                    <NavLink to="/login" className="nav-link">
                         For Admin
                     </NavLink>
                 </Nav>
@@ -48,7 +49,7 @@ return (
         		<Route path="/enquiries" exact component={Enquiries} />
         		<Route path="/contact" exact component={Contact} />
                 <Route path="/hotel/:id" component={HotelDetail} />
-                <Route path="/admin" component={Admin} />
+                <Route path="/login" component={Login} />
         	</Switch>
         </Container>
     </Router>
