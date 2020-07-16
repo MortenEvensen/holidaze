@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { BASE_URL } from "../../constants/api";
-import MapContainer from "./../maps/Map"
+import Maps from "./../maps/Map"
 
 
 
@@ -39,7 +39,8 @@ function HotelDetail(props) {
         		</div>
                 
         	</div>
-            <MapContainer lat={detail.latitude} lng={detail.longitude}/>
+            <Maps lat={detail.googleLat} lng={detail.googleLong}/>
+            {detail.googleLat && detail.googleLong && <Maps lat={detail.googleLat} lng={detail.googleLong} />}
     	</>
 
 
