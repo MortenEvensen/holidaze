@@ -21,7 +21,7 @@ function Admin() {
                 Enquiries
             </NavLink>
             <NavLink to="/establishments" className="nav-link-2">
-                Create Establishment
+                Create new Establishment
             </NavLink>
         	<Switch>    
                 <Route path="/contact" exact component={Contact} />

@@ -17,9 +17,6 @@ export function Contact() {
         console.log('Success:', response);
     return response.json();
   	})
-    .then(data => {
- 	 	console.log('Success:', JSON.stringify(data));
-	})
 	.catch((error) => {
   		console.error('Error:', error);
 	});   

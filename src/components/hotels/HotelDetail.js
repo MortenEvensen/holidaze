@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { BASE_URL } from "../../constants/api";
+import MapContainer from "./../maps/Map"
 
 
 
@@ -23,7 +24,7 @@ function HotelDetail(props) {
 
     	<>
 
-    		<div className="hotel-details-wrap bold">
+    		<div className="hotel-details-wrap ">
         		
         		<div className="text-wrap">
         			<h2>{detail.establishmentName}</h2>
@@ -36,9 +37,9 @@ function HotelDetail(props) {
                     <p><span className="bold">Contact email: </span>{detail.establishmentEmail}</p>
                     <p><span className="bold">Self catering: </span>{detail.selfCatering}</p>
         		</div>
-
+                
         	</div>
-            
+            <MapContainer lat={detail.latitude} lng={detail.longitude}/>
     	</>
 
 
