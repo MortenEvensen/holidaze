@@ -17,46 +17,43 @@ function CreateEstablishment() {
   }
 };
 
-	const form = useRef(null);
-       const [modalIsOpen,setIsOpen] = React.useState(false);
-	const { register, handleSubmit, errors } = useForm();
+    const form = useRef(null);
+    const [modalIsOpen,setIsOpen] = React.useState(false);
+    const { register, handleSubmit, errors } = useForm();
     const [id, setId] = useState([]);
-     useEffect(() => {
+    useEffect(() => {
         fetch(BASE_URL)
             .then(response => response.json())
             .then(json => setId(json))
             .catch(error => console.log(error))
     }, []);
 
-     function closeModal(){
-    setIsOpen(false);
+    function closeModal(){
+        setIsOpen(false);
     }
-
-  	function onSubmit(){ 
-        setIsOpen(true)
-    const data = new FormData(form.current)		
-   
-
-    fetch("http://localhost/hotel-api/add-establishments-success.php", {
-    	method: "POST",
     
-    	body: data
-    })
-    .then(function(response) {
-    return response.json();
-  	})
-    .then(data => {
- 	 	console.log('Success:', data);
-	})
-	.catch((error) => {
-  		console.error('Error:', error);
-	});   
-  };
+    function onSubmit(){ 
+        setIsOpen(true)
+        const data = new FormData(form.current)		
+        
+        fetch("http://localhost/hotel-api/add-establishments-success.php", {
+            method: "POST",   
+            body: data
+        })
+            .then(function(response) {
+            return response.json();
+        })
+            .then(data => {
+            console.log('Success:', data);
+        })
+            .catch((error) => {
+            console.error('Error:', error);
+        });   
+    };
  
-	return (
-	<>		
+    return (
+        <>		
 			<div className="form-wrap">
-            			
             			<form ref={form} onSubmit={handleSubmit(onSubmit)}>
             				<div className="input-wrap">
 
@@ -103,9 +100,6 @@ function CreateEstablishment() {
                                     <option value="false">false</option>
                                      
                                 </select>
-
-        					
-        					
             					<label htmlFor="description">Description: </label>
             						< br/ >
          						<textarea name="description" ref={register({ required: true })}/>
@@ -121,15 +115,14 @@ function CreateEstablishment() {
                             </div>
         				</form>
                         <ReactModal 
-         isOpen={modalIsOpen}
-         style={customStyles}>
-         <div className="modal-wrap">
-        <h2>New establishment has been added!</h2>
-        <p>It can be found in the hotels page.</p>
-    
-        <button className="button" onClick={closeModal}>Close</button>
-        </div>
-         </ReactModal>                 
+                            isOpen={modalIsOpen}
+                            style={customStyles}>
+                            <div className="modal-wrap">
+                                <h2>New establishment has been added!</h2>
+                                <p>It can be found in the hotels page.</p>
+                                <button className="button" onClick={closeModal}>Close</button>
+                            </div>
+                        </ReactModal>                 
         		</div>    		              
         </>                
     );	

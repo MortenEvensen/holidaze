@@ -7,23 +7,18 @@ const mapStyles = {
 };
 
 function Maps({ google, lat, lng}) {
-
-
     return (
     <>
-      <Map
-      	
+        <Map  	
         google={google}
         zoom={10}
         style={mapStyles}
         initialCenter={{
-         lat: lat,
-         lng: lng
+            lat: lat,
+            lng: lng
         }}
-      />
-      
-       
-       </>
+        />     
+    </>
     );
   }
 

@@ -28,7 +28,6 @@ function Admin() {
                 <Route path="/enquires" exact component={Enquires} />
                 <Route path="/establishments" exact component={Establishments} />   
             </Switch>
-
    		</Router>
 	)
 }

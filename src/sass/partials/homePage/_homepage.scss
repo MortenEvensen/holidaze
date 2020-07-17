@@ -2,7 +2,7 @@
 @import "../variables/variables";
 
 .home-info-wrap {
-	background-color: rgba(255,255,255,0.7);
+	background-color: rgba(255, 255, 255, 0.7);
 	max-height: 600px;
 	min-height: 500px;
 	max-width: 500px;
@@ -10,11 +10,9 @@
 	margin: 50px 100px 0 0;
 	border-radius: 50px;
 	overflow-y: scroll;
-	
 
 	.text-wrap {
 		padding: 25px 40px;
-		
 
 		h2 {
 			font-size: 30px;
@@ -26,7 +24,6 @@
 
 			padding: 10px 0 20px 0;
 		}
-		
 	}
 }
 
@@ -40,7 +37,6 @@
 }
 
 .homeSearchWrap {
-	
 	margin: 10px 0 0 0;
 	height: 50px;
 	width: 400px;
@@ -60,77 +56,66 @@
 		padding: 15px;
 		font-weight: 700;
 	}
-	 .small-text {
+	.small-text {
 		font-size: 15px;
 	}
 	&:hover {
-		background-color: rgba(255,255,255,0.7)
+		background-color: rgba(255, 255, 255, 0.7);
 	}
 	&:active {
-		background-color: rgba(255,255,255,0.3)
+		background-color: rgba(255, 255, 255, 0.3);
 	}
 }
 
 @media screen and (max-width: $phone-width) {
 	.home-info-wrap {
-	max-height: 600px;
-	min-height: 600px;
-	
-	width: 100%;
-	float: none;
-	margin: 60px auto;
-	
-	overflow-y: scroll;
+		max-height: 600px;
+		min-height: 600px;
 
-	
+		width: 100%;
+		float: none;
+		margin: 60px auto;
 
-	.text-wrap {
-		padding: 25px 40px;
-		h2 {
-			font-size: 30px;
-			font-weight: 700;
-			padding: 0 0 30px 0;
+		overflow-y: scroll;
+
+		.text-wrap {
+			padding: 25px 40px;
+			h2 {
+				font-size: 30px;
+				font-weight: 700;
+				padding: 0 0 30px 0;
+			}
+			.big-text {
+				font-size: 25px;
+				padding: 10px 0 20px 0;
+			}
 		}
-		.big-text {
-			font-size: 25px;
-			padding: 10px 0 20px 0;
-		}
-		
 	}
-}
-.homeSearchWrap {
-	
-	margin: 10px 5px;
-	height: 50px;
-	width: 100%;
-	border-radius: 5px;
-
-	img {
+	.homeSearchWrap {
+		margin: 10px 5px;
 		height: 50px;
-		width: 70px;
-		margin: -2px 0 0 -1px;
-		border-radius: 10px;
-	}
-	h3 {
-		font-size: 15px;
-		padding: 15px;
-		font-weight: 700;
-	}
-	 .small-text {
-		font-size: 15px;
-	}
-	&:hover {
-		background-color: rgba(255,255,255,0.7)
-	}
-	&:active {
-		background-color: rgba(255,255,255,0.3)
+		width: 100%;
+		border-radius: 5px;
+
+		img {
+			height: 50px;
+			width: 70px;
+			margin: -2px 0 0 -1px;
+			border-radius: 10px;
+		}
+		h3 {
+			font-size: 15px;
+			padding: 15px;
+			font-weight: 700;
+		}
+		.small-text {
+			font-size: 15px;
+		}
+		&:hover {
+			background-color: rgba(255, 255, 255, 0.7);
+		}
+		&:active {
+			background-color: rgba(255, 255, 255, 0.3);
+		}
 	}
 }
-}
-
-
-
-
-
-
-

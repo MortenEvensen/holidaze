@@ -12,10 +12,7 @@ function HotelSpecific({ id, name, image, description, price, guest }) {
         		<div className="text-wrap">
         			<h2 className="bold">{name}</h2>
         			<p>{description}</p>
-        			<p><span className="bold">Price: </span>{price}$</p>
-                                
-                                
-        			
+        			<p><span className="bold">Price: </span>{price}$</p>   			
         		</div>
         	</div>
         </Link>

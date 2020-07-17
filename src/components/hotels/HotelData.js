@@ -5,35 +5,32 @@ import HotelSpecific from "./HotelSpecific";
 
 function HotelData() {
 
-	const [hotels, setHotels] = useState([]);
-	const [filteredHotels, setFilteredHotels] = useState([]);
+        const [hotels, setHotels] = useState([]);
+        const [filteredHotels, setFilteredHotels] = useState([]);
+        useEffect(function () {
+            fetch(BASE_URL)
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (json) {
+                    setHotels(json);
+                    setFilteredHotels(json);
+                })
+                .catch(function (error) {
+                    console.log(error)
+                })
+        }, []);
 
-
-	useEffect(function() {
-		fetch(BASE_URL)
-			.then(function(response) {
-				return response.json();
-			})
-			.then(function(json) {
-				setHotels(json);
-				setFilteredHotels(json);
-			})
-			.catch(function(error) {
-				console.log(error)
-			})
-	}, []);
-
-	const filterHotels = function(e) {
-		const searchValue = e.target.value.toLowerCase();
-		const filteredArray = hotels.filter(function(item) {
-			const lowerCaseName = item.establishmentName.toLowerCase();
-
-			if (lowerCaseName.includes(searchValue)) {
-				return true;
-			}
-		});
-		setFilteredHotels(filteredArray)
-	}
+        const filterHotels = function (e) {
+            const searchValue = e.target.value.toLowerCase();
+            const filteredArray = hotels.filter(function (item) {
+                const lowerCaseName = item.establishmentName.toLowerCase();
+                if (lowerCaseName.includes(searchValue)) {
+                    return true;
+                }
+            });
+            setFilteredHotels(filteredArray)
+        }
 
 	return (
 			<>

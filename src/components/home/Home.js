@@ -4,22 +4,14 @@ import HomeInfo from "./HomeInfo";
 
 
 export function Home() {
-
-
-
     return (
     	<>
     	<div className="bg-wrap">
     		<div className="background-image">	
-
-    		<Heading title="" />
-    		<HomeInfo />
-    		
-    		</div>
-    	</div>
-        	
-	
-		
+    		  <Heading title="" />
+    		  <HomeInfo />
+            </div>
+    	</div>		
         </>
     );
 }

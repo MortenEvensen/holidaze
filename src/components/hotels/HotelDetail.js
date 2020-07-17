@@ -13,26 +13,20 @@ import Enquiries from "./../enquiries/Enquiries";
 
 
 function HotelDetail(props) {
-	const [detail, setDetail] = useState([]);
-	let { id } = useParams();
-	const url = BASE_URL;
-	useEffect(() => {
+    const [detail, setDetail] = useState([]);
+    let {
+        id
+    } = useParams();
+    const url = BASE_URL;
+    useEffect(() => {
         fetch(url)
             .then(response => response.json())
             .then(json => setDetail(json[id - 1]))
             .catch(error => console.log(error))
     }, []);
-
-
-
-   
-
     return (
-
     	<>
-
-    		<div className="hotel-details-wrap ">
-        		
+    		<div className="hotel-details-wrap ">		
         		<div className="text-wrap">
         			<h2>{detail.establishmentName}</h2>
                 <div className="image-details-wrap">
@@ -59,7 +53,6 @@ function HotelDetail(props) {
             {detail.googleLat && detail.googleLong && <Maps lat={detail.googleLat} lng={detail.googleLong} />}
             </div>
     	</>
-
 
     )
 }

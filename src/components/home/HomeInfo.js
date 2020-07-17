@@ -2,7 +2,6 @@ import React from "react";
 import HomeSearch from "./HomeSearch";
 
 function HomeInfo() {
-
 return (
 	<>
 		<div className="home-info-wrap">
@@ -12,10 +11,7 @@ return (
 				<p className="big-text">Find your hotel now!</p>
 				<HomeSearch />
 			</div>
-
-		</div>
-
-		
+		</div>		
 	</>
 	)
 

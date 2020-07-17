@@ -4,10 +4,7 @@ import HotelData from "./HotelData";
 
 export function Hotels() {
     return (
-        <>
-        	<HotelData />
-        	
-        </>
+        	<HotelData />	
     );
 }
 

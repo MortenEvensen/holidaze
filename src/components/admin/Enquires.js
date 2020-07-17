@@ -3,7 +3,6 @@ import EnquiresApi from "./EnquiresApi";
 
 
 function Enquires() {
-
 	return (
 		<>
 		<div className="admin-header">

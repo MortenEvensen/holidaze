@@ -7,45 +7,44 @@ import ReactModal from 'react-modal';
 export function Enquiry() {
 
     const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
-  }
-};
+        content: {
+            top: '50%',
+            left: '50%',
+            right: 'auto',
+            bottom: 'auto',
+            marginRight: '-50%',
+            transform: 'translate(-50%, -50%)'
+        }
+    };
 
 
-    function closeModal(){
-    setIsOpen(false);
+    function closeModal() {
+        setIsOpen(false);
     }
 
     const form = useRef(null)
-    const [modalIsOpen,setIsOpen] = React.useState(false);
-	  const { register, handleSubmit, errors, control } = useForm();
-  	function onSubmit(){ 
-     
-        setIsOpen(true)
-     
-    const data = new FormData(form.current)     
-    fetch("http://localhost/hotel-api/enquiry-success.php", {
-        method: "POST",    
-        body: data
-    })
-    .then(function(response) {
-        console.log('Success:', form);
-    return response.json();
-    })
-    .then(data => {
-        console.log('Success:', JSON.stringify(data));
-    })
-    .catch((error) => {
-        console.error('Error:', error);
-    });   
-  };
+    const [modalIsOpen, setIsOpen] = React.useState(false);
+    const {
+        register,
+        handleSubmit,
+        errors,
+        control
+    } = useForm();
 
+    function onSubmit() {
+        setIsOpen(true)
+        const data = new FormData(form.current)
+        fetch("http://localhost/hotel-api/enquiry-success.php", {
+                method: "POST",
+                body: data
+            })
+            .then(function (response) {
+                return response.json();
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
+    };
     return (
         <>
         <h2 className="contact-header">Book your room: </h2>
@@ -117,16 +116,16 @@ export function Enquiry() {
                     </div>
     		    </form>
     	   </div>
-         <ReactModal 
-         isOpen={modalIsOpen}
-         style={customStyles}>
-         <div className="modal-wrap">
-        <h2>Thank you for your booking request!</h2>
-        <p>You will soon recive an email with confirmation of your booking.</p>
-        <p>Thank you for using Holidaze for your booking!</p>
-        <button className="button" onClick={closeModal}>Close</button>
-        </div>
-         </ReactModal>
+            <ReactModal 
+                isOpen={modalIsOpen}
+                style={customStyles}>
+                <div className="modal-wrap">
+                    <h2>Thank you for your booking request!</h2>
+                    <p>You will soon recive an email with confirmation of your booking.</p>
+                    <p>Thank you for using Holidaze for your booking!</p>
+                    <button className="button" onClick={closeModal}>Close</button>
+                </div>
+            </ReactModal>
         </>
     );
 }
