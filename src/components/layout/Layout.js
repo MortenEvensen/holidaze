@@ -13,7 +13,6 @@ import Hotels from "../hotels/Hotels";
 import Enquiries from "../enquiries/Enquiries";
 import Contact from "../contact/Contact";
 import HotelDetail from "../hotels/HotelDetail";
-//import Admin from "../admin/Admin";
 import Login from "../admin/Login";
 
 function Layout() {

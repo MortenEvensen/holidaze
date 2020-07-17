@@ -1,7 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { BASE_URL } from "../../constants/api";
-import Maps from "./../maps/Map"
+import Maps from "./../maps/Map";
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+} from "react-router-dom";
+import Enquiries from "./../enquiries/Enquiries";
 
 
 
@@ -37,7 +44,14 @@ function HotelDetail(props) {
                     <p><span className="bold">Contact email: </span>{detail.establishmentEmail}</p>
                     <p><span className="bold">Self catering: </span>{detail.selfCatering}</p>
         		</div>
-                
+                <Router>
+                    <Link to="/enquries">
+                        <button className="button">Book your hotel room now!</button>
+                    </Link>
+                    <Switch>
+                        <Route path="/enquries" exact component={Enquiries} />
+                    </Switch>
+                </Router>
         	</div>
             <div className="map-wrap">
             <h2>Location: </h2>

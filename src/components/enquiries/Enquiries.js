@@ -2,13 +2,21 @@ import React, { useRef } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import ReactDatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import ReactModal from 'react-modal';
 
 export function Enquiry() {
 
-    const form = useRef(null)
-	const { register, handleSubmit, errors, control } = useForm();
-  	function onSubmit(){ 
+    function closeModal(){
+    setIsOpen(false);
+    }
 
+    const form = useRef(null)
+    const [modalIsOpen,setIsOpen] = React.useState(false);
+	  const { register, handleSubmit, errors, control } = useForm();
+  	function onSubmit(){ 
+     
+        setIsOpen(true)
+     
     const data = new FormData(form.current)     
     fetch("http://localhost/hotel-api/enquiry-success.php", {
         method: "POST",    
@@ -27,22 +35,23 @@ export function Enquiry() {
   };
 
     return (
-        <><h2 className="contact-header">Enquiries</h2>
+        <>
+        <h2 className="contact-header">Book your room: </h2>
             <div className="form-wrap">
         	   
         	   <form ref={form} onSubmit={handleSubmit(onSubmit)}>
         	        <div className="input-wrap">
-        		        <label htmlFor="establishment">Establishment</label>
+        		        <label htmlFor="establishment">Name of establishment</label>
         		            < br/ >
                         <input name="establishment" ref={register({ required: true })} /> {/* register an input */}
-                        {errors.establishment && <p className="error">Establishment is required.</p>}
+                        {errors.establishment && <p className="error">Establishment name is required.</p>}
                             < br/ >
-                        <label htmlFor="clientName">Name</label>
+                        <label htmlFor="clientName">Your name</label>
                             < br/ >
      				    <input name="clientName" ref={register({ required: true })} /> {/* register an input */}
      				    {errors.clientName && <p className="error">Name is required.</p>}
      			            < br/ >	
-     			        <label htmlFor="email">Email</label>
+     			        <label htmlFor="email">Your email</label>
      			            < br/ >
      				    <input name="email" ref={register({ required: true })} />
      				    {errors.email && <p className="error">Email is required.</p>}	
@@ -75,7 +84,7 @@ export function Enquiry() {
                           placeholderText="Select date"
                           ref={register({ required: true })}
                         />
-                        {errors.checkout && <p className="error">Check in date is required.</p>} 
+                        {errors.checkout && <p className="error">Check out date is required.</p>} 
                     </section>
                       <label htmlFor="adults">Number of adults: </label>  
                         <br/> 
@@ -96,6 +105,14 @@ export function Enquiry() {
                     </div>
     		    </form>
     	   </div>
+         <ReactModal isOpen={modalIsOpen}>
+         <div className="modal-wrap">
+        <h2>Thank you for your booking request!</h2>
+        <p>You will soon recive an email with confirmation of your booking.</p>
+        <p>Thank you for using Holidaze for your booking!</p>
+        <button className="button" onClick={closeModal}>Close</button>
+        </div>
+         </ReactModal>
         </>
     );
 }
