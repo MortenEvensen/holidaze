@@ -6,6 +6,18 @@ import ReactModal from 'react-modal';
 
 export function Enquiry() {
 
+    const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
+
+
     function closeModal(){
     setIsOpen(false);
     }
@@ -105,7 +117,9 @@ export function Enquiry() {
                     </div>
     		    </form>
     	   </div>
-         <ReactModal isOpen={modalIsOpen}>
+         <ReactModal 
+         isOpen={modalIsOpen}
+         style={customStyles}>
          <div className="modal-wrap">
         <h2>Thank you for your booking request!</h2>
         <p>You will soon recive an email with confirmation of your booking.</p>

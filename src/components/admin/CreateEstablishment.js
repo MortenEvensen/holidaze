@@ -1,11 +1,24 @@
 import React, { useRef, useState, useEffect } from "react";
 import { useForm, Controller } from 'react-hook-form';
 import { BASE_URL } from "../../constants/api";
+import ReactModal from 'react-modal';
 
 
 function CreateEstablishment() {
 
-	const form = useRef(null)
+    const customStyles = {
+    content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
+
+	const form = useRef(null);
+       const [modalIsOpen,setIsOpen] = React.useState(false);
 	const { register, handleSubmit, errors } = useForm();
     const [id, setId] = useState([]);
      useEffect(() => {
@@ -14,8 +27,13 @@ function CreateEstablishment() {
             .then(json => setId(json))
             .catch(error => console.log(error))
     }, []);
-  	function onSubmit(){ 
 
+     function closeModal(){
+    setIsOpen(false);
+    }
+
+  	function onSubmit(){ 
+        setIsOpen(true)
     const data = new FormData(form.current)		
    
 
@@ -101,7 +119,17 @@ function CreateEstablishment() {
                             < br/ >
             				<input className="button" name="submit" type="submit" />
                             </div>
-        				</form>                 
+        				</form>
+                        <ReactModal 
+         isOpen={modalIsOpen}
+         style={customStyles}>
+         <div className="modal-wrap">
+        <h2>New establishment has been added!</h2>
+        <p>It can be found in the hotels page.</p>
+    
+        <button className="button" onClick={closeModal}>Close</button>
+        </div>
+         </ReactModal>                 
         		</div>    		              
         </>                
     );	

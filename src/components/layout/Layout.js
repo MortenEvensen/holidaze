@@ -10,7 +10,7 @@ import {
 import Container from "react-bootstrap/Container";
 import Home from "../home/Home";
 import Hotels from "../hotels/Hotels";
-import Enquiries from "../enquiries/Enquiries";
+
 import Contact from "../contact/Contact";
 import HotelDetail from "../hotels/HotelDetail";
 import Login from "../admin/Login";
@@ -29,9 +29,7 @@ return (
                     <NavLink to="/hotels" className="nav-link">
                     	Hotels
                     </NavLink>
-                    <NavLink to="/enquiries" className="nav-link">
-                    	Enquiries
-                    </NavLink>
+                   
                     <NavLink to="/contact" className="nav-link">
                     	Contact
                     </NavLink>
@@ -45,7 +43,7 @@ return (
         	<Switch>
         		<Route path="/" exact component={Home} />
         		<Route path="/hotels" exact component={Hotels} />
-        		<Route path="/enquiries" exact component={Enquiries} />
+        	
         		<Route path="/contact" exact component={Contact} />
                 <Route path="/hotel/:id" component={HotelDetail} />
                 <Route path="/login" component={Login} />

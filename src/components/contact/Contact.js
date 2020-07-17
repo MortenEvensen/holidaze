@@ -1,11 +1,28 @@
 import React, { useRef } from 'react';
 import { useForm } from 'react-hook-form';
+import ReactModal from 'react-modal';
 
 export function Contact() {
 
-    const form = useRef(null)
+     const customStyles = {
+    content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
+      function closeModal(){
+    setIsOpen(false);
+    }
+
+    const form = useRef(null);
+     const [modalIsOpen,setIsOpen] = React.useState(false);
 	const { register, handleSubmit, errors } = useForm();
   	function onSubmit(){ 
+     setIsOpen(true)
 
     const data = new FormData(form.current)		
     fetch("http://localhost/hotel-api/contact-success.php", {
@@ -47,8 +64,19 @@ export function Contact() {
          					              < br/ >
             					<input className="button" name="submit" type="submit" />
                                 </div>
-        				</form>                 
-        		</div>    		              
+        				</form>   
+
+        		</div> 
+            <ReactModal 
+         isOpen={modalIsOpen}
+         style={customStyles}>
+         <div className="modal-wrap">
+        <h2>Thank you for your message!</h2>
+        <p>We will get back to you as soon as possible!</p>
+    
+        <button className="button" onClick={closeModal}>Close</button>
+        </div>
+         </ReactModal>    		              
         </>                
     );	
 }

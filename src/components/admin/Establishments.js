@@ -8,7 +8,7 @@ function Establishments() {
 		<>
 		<div className="admin-header">
 			<h1>Admin page</h1>
-			<h2>Create establishments:</h2>
+			<h2>Create new establishment:</h2>
 		</div>
 		<CreateEstablishment />
 		</>
