@@ -109,6 +109,15 @@ a {
 	padding: 0 40px;
 }
 
+.map-wrap {
+	margin: 20px 20px 0 20px;
+	padding: 20px;
+	h2 {
+		font-size: 30px;
+		margin: 15px 0;
+	}
+}
+
 @media screen and (max-width: $phone-width) {
 
 	.hotel-wrap {

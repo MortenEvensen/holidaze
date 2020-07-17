@@ -32,20 +32,21 @@ export function Contact() {
             					<label htmlFor="clientName">Name</label>
             						< br/ >
          						<input name="clientName" ref={register({ required: true })} />
-        						{errors.name && <p className="error">Name is required.}</p>}
+        						{errors.name && <p className="error">Name is required.</p>}
          							< br/ >	
          						<label htmlFor="email">Email</label>
          							< br/ >
          						<input name="email" ref={register({ required: true })} />
-         						{errors.email && <p className="error">Email is required.}</p>}		
-        					</div>
-        					<div className="message-wrap">
+         						{errors.email && <p className="error">Email is required.</p>}		
+        					
+        					           < br/ >
             					<label htmlFor="message">Message</label>
             						< br/ >
          						<textarea name="message" ref={register({ required: true })} />
-         						{errors.message && <p className="error">Message is required.}</p>}			
-         					</div>
+         						{errors.message && <p className="error">Message is required.</p>}			
+         					              < br/ >
             					<input className="button" name="submit" type="submit" />
+                                </div>
         				</form>                 
         		</div>    		              
         </>                

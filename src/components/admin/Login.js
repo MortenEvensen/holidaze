@@ -24,9 +24,13 @@ class Login extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          <span>Password:</span><br /> <span>(The password is "password")</span>: 
+          <span>Password:</span>
+            
+          < br />
           <input value={this.state.password} onChange={this.handleChange} />
         </label>
+        <br /> 
+          <span>(The password is "password")</span>: 
         < br />
         <Router>
 

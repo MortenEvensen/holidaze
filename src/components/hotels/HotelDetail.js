@@ -39,8 +39,11 @@ function HotelDetail(props) {
         		</div>
                 
         	</div>
+            <div className="map-wrap">
+            <h2>Location: </h2>
             <Maps lat={detail.googleLat} lng={detail.googleLong}/>
             {detail.googleLat && detail.googleLong && <Maps lat={detail.googleLat} lng={detail.googleLong} />}
+            </div>
     	</>
 
 

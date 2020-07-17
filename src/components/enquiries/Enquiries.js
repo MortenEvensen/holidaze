@@ -58,6 +58,7 @@ export function Enquiry() {
                           name="checkin"
                           className="input"
                           placeholderText="Select date"
+                          ref={register({ required: true })}
                         />
                         {errors.checkin && <p className="error">Check in date is required.</p>} 
                     </section>
@@ -72,16 +73,19 @@ export function Enquiry() {
                           name="checkout"
                           className="input"
                           placeholderText="Select date"
+                          ref={register({ required: true })}
                         />
                         {errors.checkout && <p className="error">Check in date is required.</p>} 
                     </section>
                       <label htmlFor="adults">Number of adults: </label>  
                         <br/> 
-                    <input name="adults" type="number"min="0" max="20" />
+                    <input name="adults" type="number"min="0" max="20" ref={register({ required: true })}/>
+                     {errors.adults && <p className="error">Number of adults is required.</p>} 
                         <br/> 
                      <label htmlFor="children">Number of children: </label>  
                         <br/> 
-                    <input name="children" type="number" min="0" max="20" />
+                    <input name="children" type="number" min="0" max="20" ref={register({ required: true })}/>
+                     {errors.children && <p className="error">Number of children is required.</p>} 
                         <br/> 
                         <label htmlFor="notes">Notes: </label>
                                     < br/ >
