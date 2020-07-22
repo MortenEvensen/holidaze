@@ -100,6 +100,7 @@ function CreateEstablishment() {
                                     <option value="false">false</option>
                                      
                                 </select>
+                                    < br/ >
             					<label htmlFor="description">Description: </label>
             						< br/ >
          						<textarea name="description" ref={register({ required: true })}/>

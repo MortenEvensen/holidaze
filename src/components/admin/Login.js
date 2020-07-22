@@ -24,20 +24,18 @@ class Login extends React.Component {
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
-          <span>Password:</span>
-            
+          <p>Password:</p>
           < br />
           <input value={this.state.password} onChange={this.handleChange} />
         </label>
-        <br /> 
-          <span>(The password is "password")</span>: 
+          <br /> 
+          <p>(The password is "password")</p>
         < br />
         <Router>
-
              <Link to="/admin">
                  <button disabled={this.state.password !== "password"}>Submit</button>
             </Link>
-            < br />
+              < br />
             <Switch>
                 <Route path="/admin" exact component={Admin} />
             </Switch>

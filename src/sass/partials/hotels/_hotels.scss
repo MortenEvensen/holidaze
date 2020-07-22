@@ -28,8 +28,8 @@
 		img {
 			min-height: 200px;
 			max-height: 300px;
-			width: 400px;
-			max-width: 1000px;
+			min-width: 40%;
+			max-width: 90%;
 			border-radius: 20px;
 		}
 	}
@@ -62,11 +62,13 @@ a {
 .hotel-details-wrap {
 	margin: 20px 40px;
 
+
 	padding: 20px;
 	border: 3px solid $border-blue;
 	border-radius: 20px;
 	background-color: $background-blue;
 	.image-details-wrap {
+		
 		.image {
 			min-height: 200px;
 			max-height: 300px;
@@ -122,7 +124,7 @@ a {
 			img {
 				min-height: 200px;
 				max-height: 400px;
-				min-width: 300px;
+				min-width: 150px;
 				border-radius: 20px;
 			}
 		}

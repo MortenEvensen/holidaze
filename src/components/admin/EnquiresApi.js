@@ -29,7 +29,7 @@ function EnquiresApi() {
             	<p><span className="bold">Check-out:</span> {hotel.checkout}</p>
                 <p><span className="bold">Adults:</span> {hotel.adults}</p>
                 <p><span className="bold">Children:</span> {hotel.children}</p>
-                <p><span className="bold">notes:</span> {hotel.notes}</p>
+                <p><span className="bold">Notes:</span> {hotel.notes}</p>
             </div>
                 <br />
         </div>

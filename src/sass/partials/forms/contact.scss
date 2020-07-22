@@ -1,4 +1,5 @@
 @import "../colors/colors";
+@import "./../variables/variables";
 
 .contact-header {
 	font-size: 30px;
@@ -55,3 +56,28 @@ label {
 .error {
 	color: red;
 }
+@media only screen and (max-width: $phone-width) { 
+	.form-wrap {
+	padding: 30px;
+	margin: 30px 0px;
+	
+
+	.input-wrap {
+		flex: 1;
+		margin: 0px;
+		input, textarea  {
+			margin: 5px 0 10px 0;
+		}
+	}
+	.message-wrap {
+		flex: 1;
+		margin: 30px;
+		textarea {
+			margin: 10px 0 10px 0;
+			padding: 0px;
+		}
+	}
+}
+}
+
+
