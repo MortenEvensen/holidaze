@@ -8,7 +8,6 @@ return (
 			<div className="text-wrap">
 				<h2>Find your hotel in Bergen!</h2>
 				<p>Bergen has a lot of amazing places to stay!</p>
-				<p className="big-text">Find your hotel now!</p>
 				<HomeSearch />
 			</div>
 		</div>		
